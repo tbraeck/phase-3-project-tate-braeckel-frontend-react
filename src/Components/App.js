@@ -5,6 +5,11 @@ import { Routes, Route } from 'react-router-dom'
 import Header from './Header'
 import '../index.css'
 import Subjects from './SubjectPage'
+import DropdownComp from './DropdownComp'
+
+import Art from './Art'
+
+
 function App() {
   // function addNewDrawing(oneDrawing) {
   //   setUsers([...users.id, oneDrawing])
@@ -13,11 +18,12 @@ function App() {
     <div className="App">
       <Header />
       <NavBar />
-      <Dropdown/>
+      <DropdownComp/>
       <div className="routes">
         <Routes>
           <Route exact path="/home" element={<Home />} />
           <Route path="/subjects" element={<Subjects />} />
+          <Route path="/art" element={<Art />} />
        
         </Routes>
       </div>
