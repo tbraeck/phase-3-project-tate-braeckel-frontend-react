@@ -28,6 +28,8 @@ return (
         <SubjectList
             name={subject.name}
             description={subject.description}
+            resources={subject.resources}
+            link={subject.link}
         />
     </div>
 
