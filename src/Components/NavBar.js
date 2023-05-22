@@ -7,12 +7,7 @@ function NavBar() {
       <div>
         <NavLink
           to="/home"
-          style={{
-            // marginRight: '100px',
-            width: '100%',
-            fontSize: '24px',
-            color: '#f3a84c',
-          }}
+
         >
           <button className="btnStyle" type="button">
             Home
@@ -20,30 +15,19 @@ function NavBar() {
         </NavLink>
         <NavLink
           to="/randomizer"
-          style={{
-            // marginRight: '100px',
-            width: '100%',
-            fontSize: '24px',
-            color: '#f3a84c',
-          }}
+
         >
           <button type="button" className="btnStyle">
-            Drawing Randomizer
-          </button>
+            Subjects          </button>
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to="/savedDrawings"
-          style={{
-            // marginRight: '100px',
-            width: '100%',
-            fontSize: '24px',
-            color: '#f3a84c',
-          }}
+
         >
           <button type="button" className="btnStyle">
             Saved Drawing Ideas
           </button>
-        </NavLink>
+        </NavLink> */}
         {/* <NavLink
           to="/userform"
           style={{

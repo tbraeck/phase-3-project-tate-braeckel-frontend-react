@@ -1,4 +1,5 @@
 import React from 'react'
+// import { Container } from 'react-bootstrap'
 // import ThemeSwitcher from './ThemeSwitcher'
 // import Header from './Header'
 // import NavBar from './NavBar'
@@ -6,17 +7,17 @@ import React from 'react'
 function Home() {
   return (
     <>
-      <div className="dogGifBox">
-        <a className="dogImg" href="http://localhost:3000/randomizer">
-          <img src="../DogGifRing (3 × 2 in).gif" alt="dogGif" />
-        </a>
-        <br></br>
-        <div>
-          <div className="titleBtnHome">
-            <h1>⬆⬆RANDOM ART IDEAS⬆⬆</h1>
-          </div>
-        </div>
+     <div className='homeParaDiv'>
+      <container className="homePara">
+      <h1>
+      Welcome to <em><b>TEACH SOURCE</b></em>. <br/>
+
+This is a one stop shop for any and all teacher resources.
+
+</h1>
+      </container>
       </div>
+     
     </>
   )
 }
