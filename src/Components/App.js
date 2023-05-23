@@ -4,26 +4,27 @@ import NavBar from './NavBar'
 import { Routes, Route } from 'react-router-dom'
 import Header from './Header'
 import '../index.css'
-import Subjects from './SubjectPage'
+import Subject from './Subject'
 import DropdownComp from './DropdownComp'
+import SubjectPage from './SubjectPage'
 
-import Art from './Art'
+// import Art from './Art'
 
 
 function App() {
-  // function addNewDrawing(oneDrawing) {
-  //   setUsers([...users.id, oneDrawing])
-  // }
+
   return (
     <div className="App">
+      
       <Header />
       <NavBar />
+      {/* <Home/> */}
       <DropdownComp/>
       <div className="routes">
         <Routes>
-          <Route exact path="/home" element={<Home />} />
-          <Route path="/subjects" element={<Subjects />} />
-          <Route path="/art" element={<Art />} />
+          <Route exact path="/" element={<Home />} />
+          <Route path="/subjects" element={<SubjectPage />} />
+          <Route path="/subjects/:id" element={<Subject />} />
        
         </Routes>
       </div>

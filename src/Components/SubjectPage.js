@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState, useEffect} from 'react'
-import SubjectList from './SubjectList'
+import SubjectLink from './SubjectLink'
+import Subject from './Subject'
 
-function Subjects() {
+function SubjectPage() {
     const [subjects, setSubjects] = useState([])
 
     useEffect(() => {
@@ -13,34 +14,19 @@ fetch(`http://localhost:9292/subjects`)
     }, [])
     console.log(subjects)
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:8000/artwork`)
-    //         .then((r) => r.json())
-    //         .then(artArray => setArt(artArray))
-    // }, [])
-  return (
-    <div>
-        <ul className='subjectList'>
-        {subjects.map((subject) => {
+   const subjectList = subjects.map(subject => <SubjectLink key={subject.id} subject ={subject} /> )
 
 return (
-    <div className="card"  key={subject.name}>
-        <SubjectList
-            name={subject.name}
-            description={subject.description}
-            resources={subject.resources}
-            link={subject.link}
-        />
-    </div>
+    <div className="card"  >
 
-
-)
-})}
-   </ul>
+<ul>
+    {subjectList}
+</ul>
+<Subject subject={subjectList}/>
     </div>
   )
 }
 
-export default Subjects
+export default SubjectPage
 
 

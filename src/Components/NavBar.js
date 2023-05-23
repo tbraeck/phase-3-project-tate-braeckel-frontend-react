@@ -6,7 +6,7 @@ function NavBar() {
     <div className="linkButtons">
       <div>
         <NavLink
-          to="/home"
+          to="/"
 
         >
           <button className="btnStyle" type="button">
