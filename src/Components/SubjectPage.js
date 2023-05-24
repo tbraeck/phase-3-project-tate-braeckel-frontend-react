@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState, useEffect} from 'react'
-import SubjectLink from './SubjectLink'
-import Subject from './Subject'
+// import SubjectLink from './SubjectLink'
+// import Subject from './Subject'
+import { Link } from 'react-router-dom'
+// import SubjectList from './SubjectList'
 
 function SubjectPage() {
     const [subjects, setSubjects] = useState([])
@@ -12,17 +14,24 @@ fetch(`http://localhost:9292/subjects`)
 .then((data) => setSubjects(data))
 
     }, [])
-    console.log(subjects)
+    // console.log(subjects)
 
-   const subjectList = subjects.map(subject => <SubjectLink key={subject.id} subject ={subject} /> )
+ 
 
 return (
-    <div className="card"  >
+  <div>
+   <h2>
+  {subjects.name}
+ </h2>
+ {subjects.map((subject) => (
+ 
+  <h2 key={subject.id}>
+<Link to={`/subjects/${subject.id}`}>
+  {subject.name}
+</Link>
+  </h2>
 
-<ul>
-    {subjectList}
-</ul>
-<Subject subject={subjectList}/>
+ ))}
     </div>
   )
 }
