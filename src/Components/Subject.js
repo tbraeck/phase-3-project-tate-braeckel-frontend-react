@@ -19,30 +19,21 @@ const {id} = useParams()
         //   )
           console.log(subjects)
 
-// const resource = oneSubject.resources;
-return(
-  <div>
-    {subjects.map((subject) => {
-      return(
-        <div key={subject.id}>
-          <h1>{subject.name}</h1>
-          <h2>{subject.description}</h2>
+// let subjects = data;
 
-{
-  subject.resources.map(data => (
+const theSubjects = subjects.map(subject => {
+  return(
     <div>
-          <h3>{data.name}</h3>
-          <h3>{data.description}</h3>
-          <h3>{data.url}</h3>
-    </div>
-  )  )}
-        </div>
-      )
-    })}
-</div>
+      <h1>{theSubjects.name}</h1>
+  <h2>{theSubjects.description}</h2>
+
+  </div>)
+
+})
+return (
+  {theSubjects}
 )
-  }
 
-
+}
 
 export default Subject
