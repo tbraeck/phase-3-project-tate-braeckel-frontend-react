@@ -2,12 +2,15 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import Resource from './Resource'
+import NewResource from './NewResource'
 // import { Link } from 'react-router-dom'
 
 function Subject( ) {
   const [subject, setSubject] = useState({
     resources: []
   })
+
+
 // const [subjectForm, setSubjectForm] = useState(false)
 
 const {id} = useParams()
@@ -35,9 +38,7 @@ const resources = subject.resources.map(res => <Resource key={res.id} resource={
     <h1>Resources: </h1>
   
    {resources}
-
-    
-   <br/>
+   <NewResource/>
     </div>
     )
     

@@ -1,12 +1,16 @@
 import React from 'react'
 import { useState, useEffect} from 'react'
-// import SubjectLink from './SubjectLink'
-// import Subject from './Subject'
+
 import { Link } from 'react-router-dom'
-// import SubjectList from './SubjectList'
 
 function SubjectPage() {
     const [subjects, setSubjects] = useState([])
+    const [newResource, setNewResource] = useState([]);
+
+    function addNewResource(oneResource) {
+      setNewResource([...subjects, oneResource])
+    }
+      // console.l
 
     useEffect(() => {
 fetch(`http://localhost:9292/subjects`)
@@ -26,13 +30,16 @@ return (
  {subjects.map((subject) => (
  
   <h2 key={subject.id}>
-<Link to={`/subjects/${subject.id}`}>
+<Link to={`/subjects/${subject.id}`} addNewResource={addNewResource} newResource={newResource}>
   {subject.name}
 </Link>
   </h2>
   
 
  ))}
+
+
+
     </div>
   )
 }

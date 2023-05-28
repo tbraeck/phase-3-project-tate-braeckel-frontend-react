@@ -1,6 +1,10 @@
 import React from 'react'
+// import NewResource from './NewResource'
+// import NewResource from './NewResource'
+
 
 function Resource({resource}) {
+
   return (
     <div>
             <h2>Name: </h2>
@@ -13,10 +17,7 @@ function Resource({resource}) {
       <br/>
       <h2>Resource URL: </h2>
       < a href={resource.url} target="_blank" rel="noopener noreferrer">{resource.url}</a>
-      <br/>
-      <button>Add Resource</button>
-      <button>Delete Resource</button>
-
+     
     </div>
   )
 }
