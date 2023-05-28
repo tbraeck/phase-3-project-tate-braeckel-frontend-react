@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import Header from './Header'
 import '../index.css'
 import Subject from './Subject'
-import DropdownComp from './DropdownComp'
+// import DropdownComp from './DropdownComp'
 import SubjectPage from './SubjectPage'
 
 // import Art from './Art'
@@ -19,7 +19,7 @@ function App() {
       <Header />
       <NavBar />
       {/* <Home/> */}
-      <DropdownComp/>
+      {/* <DropdownComp/> */}
       <div className="routes">
         <Routes>
           <Route exact path="/" element={<Home />} />

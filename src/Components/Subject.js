@@ -1,10 +1,13 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
-// import Resource from './Resource'// import { Link } from 'react-router-dom'
+import Resource from './Resource'
+// import { Link } from 'react-router-dom'
 
 function Subject( ) {
-  const [subjects, setSubjects] = useState([])
+  const [subject, setSubject] = useState({
+    resources: []
+  })
 // const [subjectForm, setSubjectForm] = useState(false)
 
 const {id} = useParams()
@@ -12,28 +15,35 @@ const {id} = useParams()
   useEffect(() => {
     fetch(`http://localhost:9292/subjects/${id}`)
     .then((r) => r.json())
-    .then((data) => setSubjects(data))
+    .then((data) => setSubject(data))
         }, [])
 
-        // console.log(oneSubject
-        //   )
-          console.log(subjects)
-
-// let subjects = data;
-
-const theSubjects = subjects.map(subject => {
+       
+  console.log(subject.resources)
+const resources = subject.resources.map(res => <Resource key={res.id} resource={res}/>)
+ 
   return(
     <div>
-      <h1>{theSubjects.name}</h1>
-  <h2>{theSubjects.description}</h2>
+      <br/>
+    {/* <h1>I am a subject</h1> */}
+    <h1>Subject: </h1>
+    <h1>{subject.name}</h1>
+    <br/>
+    <h1>Description: </h1>
+    <h1>{subject.description}</h1>
+    <br/>
+    <h1>Resources: </h1>
+  
+   {resources}
 
-  </div>)
+    
+   <br/>
+    </div>
+    )
+    
+ 
 
-})
-return (
-  {theSubjects}
-)
-
+  
 }
 
 export default Subject
